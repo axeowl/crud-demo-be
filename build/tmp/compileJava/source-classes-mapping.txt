@@ -1,0 +1,26 @@
+it/unisalento/cruddemo/dto/ProdottoDTO.java
+ it.unisalento.cruddemo.dto.ProdottoDTO
+it/unisalento/cruddemo/dto/ProdottoLightDTO.java
+ it.unisalento.cruddemo.dto.ProdottoLightDTO
+it/unisalento/cruddemo/converter/ProdottoConverter.java
+ it.unisalento.cruddemo.converter.ProdottoConverter
+it/unisalento/cruddemo/services/interfaces/ProdottoServiceInterface.java
+ it.unisalento.cruddemo.services.interfaces.ProdottoServiceInterface
+it/unisalento/cruddemo/domain/Prodotto.java
+ it.unisalento.cruddemo.domain.Prodotto
+it/unisalento/cruddemo/exceptions/ProdottoNotFound.java
+ it.unisalento.cruddemo.exceptions.ProdottoNotFound
+it/unisalento/cruddemo/repository/ProdottoRepository.java
+ it.unisalento.cruddemo.repository.ProdottoRepository
+it/unisalento/cruddemo/domain/Persona.java
+ it.unisalento.cruddemo.domain.Persona
+it/unisalento/cruddemo/restcontrollers/ProdottoRestController.java
+ it.unisalento.cruddemo.restcontrollers.ProdottoRestController
+it/unisalento/cruddemo/services/implementations/ProdottoServiceImplementation.java
+ it.unisalento.cruddemo.services.implementations.ProdottoServiceImplementation
+it/unisalento/cruddemo/domain/Ordine.java
+ it.unisalento.cruddemo.domain.Ordine
+it/unisalento/cruddemo/config/WebAppConf.java
+ it.unisalento.cruddemo.config.WebAppConf
+it/unisalento/cruddemo/CrudDemoApplication.java
+ it.unisalento.cruddemo.CrudDemoApplication

@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  java:
+    image: openjdk:8-jdk-alpine
+    volumes:
+      - ../build/libs/crud-demo-0.0.1-SNAPSHOT.jar:/opt/server.jar
+      - java:/root/.m2
+    entrypoint: /usr/bin/java -jar -Dspring.datasource.url=jdbc:mysql://db:3306/cruddemo -Dspring.profiles.active=test /opt/server.jar
+    ports:
+      - "8080:8080"
+    networks: 
+      - net
+    links:
+      - db
+  
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cruddemo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks: 
+      - net
+
+  build_jar:
+    image: openjdk:8-jdk-alpine
+    volumes:
+      - ../src:/opt/src
+      - ../build:/opt/build
+      - ../gradle:/opt/gradle
+      - ../.gradle:/opt/.gradle
+      - ../build.gradle:/opt/build.gradle
+      - ../gradlew:/opt/gradlew
+      - ../gradlew.bat:/opt/gradlew.bat
+      - ../settings.gradle:/opt/settings.gradle
+      - build_jar:/root/.m2
+    working_dir: /opt
+    entrypoint: ./gradlew bootJar
+    networks: 
+      - net
+    links:
+      - db
+
+volumes:
+  java:
+  build_jar:
+
+networks: 
+  net:
